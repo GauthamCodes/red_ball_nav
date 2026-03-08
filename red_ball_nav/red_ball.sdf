@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!--
+  red_ball.sdf
+  ============
+  A simple red sphere for Gazebo simulation.
+  Spawn with:
+    ros2 run gazebo_ros spawn_entity.py \
+        -entity red_ball \
+        -file /path/to/red_ball.sdf \
+        -x 1.5 -y 0.0 -z 0.1
+-->
+<sdf version="1.6">
+  <model name="red_ball">
+    <static>true</static>
+    <link name="ball_link">
+      <visual name="ball_visual">
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1.0 0.0 0.0 1.0</ambient>
+          <diffuse>1.0 0.0 0.0 1.0</diffuse>
+          <specular>0.5 0.0 0.0 1.0</specular>
+        </material>
+      </visual>
+      <collision name="ball_collision">
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
